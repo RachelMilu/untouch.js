@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <title>untouch.js test</title>
+    <style>
+        .a {
+            padding: 30px;
+            background: #7f6f80;
+        }
+        .wrapper, .main,. page{
+            position: relative;
+        }
+        .test {
+            background: red;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="main">
+        <div class="a">7</div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="a">7</div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="test" id="sw3">sw zepto</div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="a">7</div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="a">7</div>
+        <br/>
+
+    </div>
+</div>
+<script src="build/static/untouch.js"></script>
+<script>
+
+    if(window.$){
+console.log('use zepto...')
+        $('#sw3').on('swipeDown',function(e){
+//            alert('swipeDown tap')
+            console.log('swipeDown ttigger',e)
+        })
+        $('#sw3').on('swipeUp',function(e){
+//            alert('swipeUp tap')
+            console.log('swipeUp ttigger',e)
+        })
+        $('#sw3').on('swipeLeft',function(e){
+//                alert('swipeLeft tap')
+            console.log('swipeLeft ttigger',e)
+        })
+        $('#sw3').on('swipeRight',function(e){
+//        alert('swipeRight tap')
+            console.log('swipeRight ttigger',e)
+        })
+
+        $('#sw3').on('tap',function(e){
+            //        alert('double tap')
+            console.log('tap !!!!!!!!!!!!!!!!!!!!!!!',e)
+        })
+
+        $('#sw3').on('doubleTap',function(e){
+            //        alert('double tap')
+            console.log('doubleTap ttigger',e)
+        })
+        $('#sw3').on('singleTap',function(e){
+            //        alert('single tap')
+            console.log('singleTap ttigger',e)
+        })
+        $('#sw3').on('longTap',function(e){
+            //        alert('long tap')
+            console.log('longtap ttigger',e)
+        })
+    } else {
+        console.log('without zepto...')
+        document.getElementById('sw3').addEventListener('swipeDown',function(e){
+//            alert('swipeDown tap')
+            console.log('swipeDown ttigger',e)
+        })
+        document.getElementById('sw3').addEventListener('swipeUp',function(e){
+//            alert('swipeUp tap')
+            console.log('swipeUp ttigger',e)
+        })
+        document.getElementById('sw3').addEventListener('swipeLeft',function(e){
+//                alert('swipeLeft tap')
+            console.log('swipeLeft ttigger',e)
+        })
+        document.getElementById('sw3').addEventListener('swipeRight',function(e){
+//        alert('swipeRight tap')
+            console.log('swipeRight ttigger',e)
+        })
+
+        document.getElementById('sw3').addEventListener('tap',function(e){
+            //        alert('double tap')
+            console.log('tap ttigger',e)
+            console.log(e.target.tagName)
+        })
+        document.getElementById('sw3').addEventListener('singleTap',function(e){
+            //        alert('single tap')
+            console.log('singleTap ttigger',e)
+        })
+        document.getElementById('sw3').addEventListener('doubleTap',function(e){
+            //        alert('single tap')
+            console.log('doubleTap ttigger',e)
+        })
+        document.getElementById('sw3').addEventListener('longTap',function(e){
+            //        alert('long tap')
+            console.log('longtap ttigger',e)
+        })
+    }
+    
+
+
+
+
+</script>
+</body>
+</html>
